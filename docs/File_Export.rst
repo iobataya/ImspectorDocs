@@ -1,9 +1,9 @@
 ===========
-Export of Files
-============
+ファイル出力
+===========
 
 .. role:: cppcode(code)
-Data from Imspector measurements can be exported into several file formats:
+Imspectorでのデータは次のファイル形式で書き出し可能である。
 - Colormap Tiff files/stacks (.tif/.tiff)
 - RGB Tiff files/stacks (.tif)
 - binary double files (.dbl)
@@ -13,6 +13,5 @@ Data from Imspector measurements can be exported into several file formats:
 - ASCII data files (.dat, .asc)
 - Becker&Hickl data files (.sdt)
 
-To export data select the data Stack and select 'File → Export' or e use the shortcut <Ctrl> + E to opten the Export Data dialog.
-
+書き出しはデータを選択してメニュー「File -> Export」か、ショートカットの <Ctrl> + E でExport Dataダイアログが開く。
 
