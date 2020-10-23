@@ -1,26 +1,25 @@
-.. _Quickstart:
+.. _クイックスタート:
 
 =================
-Quickstart
+クイックスタート
 =================
 
-Imspector contains a few data analysis plugins and drivers for
+Imspectorはデータ解析のためのプラグインやハードウェア用のドライバーを備えている。
 
-- VidCap (for most webcams) 
-- SimCam (a simulated camera for testing) 
-- SyncDriver (provides dummy axes, allows synchronization via serial port)
-- ComDriver (a generic driver for com/gpib devices with a simple protocol)
-- Timer (for time-lapse type measurements)
+- VidCap (ほとんどのWebカメラに対応) 
+- SimCam (テスト用仮想カメラ) 
+- SyncDriver (ダミー軸、シリアルポートによる同期を提供)
+- ComDriver (COM/GPIBの汎用ドライバ)
+- Timer (タイムラプス等のためのタイマー)
 - Becker&Hickl SPCM cards
-- National instruments DAQ cards (through the NiDAQmx drivers) which control scanners, shutters and read out detectors
-- Scanners from PI
-- Various CCD cameras
+- National instruments DAQ cards (NiDAQmxドライバを介してスキャナやシャッター、検出器を制御)
+- Scanners from PI (PI社のスキャナドライバ)
+- Various CCD cameras (種々のCCDカメラ)
  
 .. warning::
-   Drivers are simply dll's that Interface Imspector to the drivers you install with your hardware. They have to
-   be compatible with both, the version of Imspector used and the version of the hardware drivers and support dll's
-   installed on your system. Always download all necessary drivers together with a new version of Imspector. And
-   make sure you have updated your hardware drivers.
+   ドライバーはdllファイルとしてハードウェアと共にインストールされる。Imspectorのバージョンやハードウェアのドライバーの
+   バージョンは対応する組み合わせである必要がある。常に新しいバージョンのImspectorを使用する必要がある。
+   ハードウェアドライバーも最新のものにアップデートする必要がある。
 
 Installation
 -------------
