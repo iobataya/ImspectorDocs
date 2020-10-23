@@ -1,50 +1,63 @@
-﻿============
-Introduction
+============
+Imspector
 ============
 
-Imspector is a robust software system for experimental control and quantitative data analysis in microscopy and
-spectroscopy. Integration of data processing and acquisition allows real-time analysis and visualization of
-experimental results.
+Imspectorはさまざまな顕微鏡（蛍光・共焦点・STED等）や分光器を直接制御でき、定量的なデータ解析を行うことができるソフトウェアである。
+イメージの撮像、データの取得、データ解析を統合することにより、測定結果のリアルタイムでの解析や可視化ができる。
 
-Features
+.. Imspector is a robust software system for experimental control and quantitative data analysis in microscopy and
+   spectroscopy. Integration of data processing and acquisition allows real-time analysis and visualization of
+   experimental results.
+
+主な機能
 --------
 
 .. figure:: /images/intro/customization.jpg
    :width: 8 cm
    :align: center
 
-   Customization of toolbars, menus and shortcuts.
+   ツールバーやメニュー、ショートカットのカスタマイズ
+.. Customization of toolbars, menus and shortcuts.
 
 .. figure:: /images/intro/workspace.jpg
    :width: 8 cm
    :align: center
 
-   The workspace allows you to keep track of all your measurements.
+   「workspace」によりすべての測定条件やデータを保存
+.. The workspace allows you to keep track of all your measurements.
 
 .. figure:: /images/intro/new_device.jpg
    :width: 8 cm
    :align: center
 
-   Add new devices derived from standard or custom drivers.
+   標準ドライバやカスタムドライバなどの追加が可能
+.. Add new devices derived from standard or custom drivers.
 
-Imspector offers a variety of functions for speed-optimized visualization of up to 4-dimensional data as graphs and
-pictures, an intuitive user interface and access to analysis methods. Data can be graphically cropped, moved, copied
-and combined in overlays. In addition to ordinary cuts, zooming, multi-channel display and user-defined color tables,
-many tools are provided that are especially useful in quantitative microscopy. There are tools for the calculation of
-point-spread functions and simple linear de-convolution, frequency filtering etc. A tool for off-line nonlinear
-de-convolution is also included.
+Imspectorは4次元までのグラフや画像をデータを高速に可視化する機能を備えている。
+また、各解析が容易にできる直感的なインターフェースにより、データの切り抜きやコピー、オーバーレイなどはGUIで操作できる。
+切り抜き、拡大/縮小、多チャンネル表示、カスタムLUT等のツールに加え定量的な顕微鏡観察に便利なツールを備えている。
+PSFの計算、線形デコンボリューション、周波数フィルタ、オフライン非線形デコンボリューションも含まれている。
+
+.. Imspector offers a variety of functions for speed-optimized visualization of up to 4-dimensional data as graphs and
+   pictures, an intuitive user interface and access to analysis methods. Data can be graphically cropped, moved, copied
+   and combined in overlays. In addition to ordinary cuts, zooming, multi-channel display and user-defined color tables,
+   many tools are provided that are especially useful in quantitative microscopy. There are tools for the calculation of
+   point-spread functions and simple linear de-convolution, frequency filtering etc. A tool for off-line nonlinear
+   de-convolution is also included.
 
 .. figure:: /images/intro/parser.jpg
    :width: 8 cm
    :align: center
 
-   Use the built-in parser to analyse and process your data.
+   ビルトインパーサーによる解析処理
+.. Use the built-in parser to analyse and process your data.
 
 .. figure:: /images/intro/analysis.jpg
    :width: 8 cm
    :align: center
 
-   Nonlinear fitting of single data curves or e.g. along the time axis of a TCSPC stack in each spatial point.
+   データの非線形フィッテイング、TCSPCスタックの時間軸上の空間的な点
+.. Nonlinear fitting of single data curves or e.g. along the time axis of a TCSPC stack in each spatial point.
 
 A built-in function parser allows for user-defined filters, transformations and other numerical operations on the
 data and as part of the 'FitPlugin' nonlinear parameter fitting with user-defined functions and a choice of several
