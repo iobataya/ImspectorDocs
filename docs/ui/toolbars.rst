@@ -1,36 +1,44 @@
-========
-Toolbars
-========
+=========
+ツールバー
+=========
 
-Display toolbar
----------------
+Display ツールバー
+-----------------
 
-The 'Display' toolbar (:ref:`fig_toolbar_display`) allows to change the way the data is displayed in a very fast way.
+'Display'ツールバー(:ref:`fig_toolbar_display_2`)は、データの表示方法をすぐに変更できるボタンを備える。
 
-- The first three buttons allow to rotate a 3D data stack from XY to XZ to YZ.
-- The fourth button allows to exchange the displayed X and Y axis and thereby to tilt the data axes.
-- The fifth button changes the data representation from overlaid to side by side.
-- The sixth button is to show the different data channels in RGB colors. The first channel will be shown in red, the second in green, and the third in blue. All other channels will not be changed.
-- The seventh button shows/hides the information and comment pane on top of the measurement view.
-- The eighth button shows information on the data stack dimensions.
-
+- 表示軸ボタン
+  - XY mode (1)
+  - XZ Mode (2)
+  - YZ Mode (3)
+  - XY軸を交換して回転させる、Flip (4)
+- スタック操作ボタン
+  - 3Dスタック1枚の表示と重ね合わせ表示を切り替える。(5)
+  - 全スタックの合計値で表示する。(6)
+  - スタックの最大値を投影する、MIP表示 (7)
+- 表示操作ボタン
+  - ギャラリーモード/オーバーレイモードの切り替え(8)
+  - 異なるチャンネルをRGB色で表示させる。(9)
+    割り当てる色やチャンネル数はPreferencesのDisplay settingsでRGB以外にも設定できる。
+  - スケールバーの表示切替
+  - データスタックの情報を表示する。
+  - イメージサイズの変更
+  
 .. _fig_toolbar_display:
-.. figure:: /images/ui/toolbar_display.png
+.. figure:: /images/ui/toolbar_display_2.png
    :width: 8 cm
    :align: center
 
    The 'Display' toolbar.
 
-Files toolbar
--------------
+Filesツールバー
+--------------
 
-- The first button of the 'File' toolbar (:ref:`fig_toolbar_files`) creates a **new measurement** with default imaging parameters (which are given during the installation of the microscope).
-- The second button of the file toolbar creates a **new measurement from a template** (containing the imaging parameters).
-- The third button of the file toolbar **opens** a measurement from a file. Here as well files from other compatible imaging formats can be opened.
-- The fourth button of the file toolbar **saves** a measurement with a given file name (**save as**).
-- The fifth button of the file toolbar saves a measurement under the same file name the current measurement is entitled with.
-- If the 'overwrite warning' is activated Imspector will ask if the current measurement should be overwritten. Otherwise it saves it with the same file name.
-  **An already existing file may be overwritten!**
+- 最初のボタン： **new measurement** をデフォルトのパラメーターで作成する。
+- ２番目： **new measurement from a template** であり、既定のテンプレートからmeasurementを作成する。
+- ３番目： measurementファイルを **open** する。msr以外のフォーマットのものもここで開くことができる。
+- ４番目： measurementファイルをに名前をつけて **save** する。
+- ５番目： **save**　上書き
 - The sixth button of the file toolbar creates a **new window** within the current measurement.
 - The seventh button of the file toolbar **cuts** out the selected data window. The data is purged to the clipboard.
 - The eighth button of the file toolbar **copies** the selected data to the clipboard.
