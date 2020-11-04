@@ -13,13 +13,11 @@ Imspectorでは'Fire'がデフォルトのカラーマップとして選択さ�
    'Fire' カラーマップ
 
 カラーマップの値は右クリックから現れるコンテキストメニューで変更できる。
-.. Properties of the colormap can be changed using right-click context menu. To access this menu the active colormap has to be right-clicked.
 
 カラーマップの変更
 ----------------
 
 カラーマップ上で右クリックしてコンテキストメニューを表示する。'Colormap'メニューの中から表示させたいカラーマップを選択する。
-.. Enter colormap right-click context menu. To change the colormap choose the first entry of the menu ‘Colormap' and simply select the colormap of choice.
 
 .. _fig_colormaps:
 .. figure:: /images/ui/colormaps.jpg
