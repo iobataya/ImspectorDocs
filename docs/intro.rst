@@ -5,10 +5,6 @@ Imspector
 Imspectorはさまざまな顕微鏡（蛍光・共焦点・STED等）や分光器を直接制御でき、定量的なデータ解析を行うことができるソフトウェアである。
 イメージの撮像、データの取得、データ解析を統合することにより、測定結果のリアルタイムでの解析や可視化ができる。
 
-.. Imspector is a robust software system for experimental control and quantitative data analysis in microscopy and
-   spectroscopy. Integration of data processing and acquisition allows real-time analysis and visualization of
-   experimental results.
-
 主な機能
 --------
 
@@ -38,13 +34,6 @@ Imspectorは4次元までのグラフや画像をデータを高速に可視化�
 切り抜き、拡大/縮小、多チャンネル表示、カスタムLUT等のツールに加え定量的な顕微鏡観察に便利なツールを備えている。
 PSFの計算、線形デコンボリューション、周波数フィルタ、オフライン非線形デコンボリューションも含まれている。
 
-.. Imspector offers a variety of functions for speed-optimized visualization of up to 4-dimensional data as graphs and
-   pictures, an intuitive user interface and access to analysis methods. Data can be graphically cropped, moved, copied
-   and combined in overlays. In addition to ordinary cuts, zooming, multi-channel display and user-defined color tables,
-   many tools are provided that are especially useful in quantitative microscopy. There are tools for the calculation of
-   point-spread functions and simple linear de-convolution, frequency filtering etc. A tool for off-line nonlinear
-   de-convolution is also included.
-
 .. figure:: /images/intro/parser.jpg
    :width: 8 cm
    :align: center
@@ -56,24 +45,15 @@ PSFの計算、線形デコンボリューション、周波数フィルタ、�
    :width: 8 cm
    :align: center
 
-   データの非線形フィッテイング、TCSPCスタックの時間軸上の空間的な点
-.. Nonlinear fitting of single data curves or e.g. along the time axis of a TCSPC stack in each spatial point.
+   データの非線形フィッテイング、TCSPCスタックの空間的な各点における時間軸上のシグナル
 
-A built-in function parser allows for user-defined filters, transformations and other numerical operations on the
-data and as part of the 'FitPlugin' nonlinear parameter fitting with user-defined functions and a choice of several
-optimized algorithms.
+内蔵されたビルトインパーサーにより、ユーザーが定義したフィルター処理、変換処理、演算処理、ユーザーの定義した関数の非線形フィッティング、種々のアルゴリズムが利用できる。
 
-Imspector imports and exports many commonly used data formats and communicates with other applications as e.g.
-Origin, Photoshop, Freehand and Excel through cut- and paste operations.
+Imspectorは一般に使われているデータフォーマットの読み込み・書き出しが可能で、他のアプリケーションとの連携ができる。Origin, Photoshop, Freehand, Excelには直接コピー＆ペーストできる。
 
-Hardware drivers exist for analog output devices, multi-channel scales, time correlated single photon counting
-(TCSPC), various CCD cameras (e.g. Apogee, Hamamatsu, PCO), laser power controllers, positioning stages (PIFOCs etc.).
+多様なハードウェアドライバが利用できる。(AIO, DIO, TCSPC, CCD camera from Apogee, Hamamatsu, PCO etc., LASER制御, ステージ制御など)
 
-Adding the ability to control new hardware components is straight-forward and achieved through a Plugin structure. Such
-hardware drivers can provide dialogs for hard- and software-specific settings and parameter adjustment during
-measurements. Data readout can be synchronous or asynchronous, the program handles the measurement flow,
-synchronization of different devices and the coordination of data readout, analysis and visualization during the
-measurement.
+新しいハードウェアの制御機能の追加は非常に容易で、プラグインとして追加することができる。追加したハードウェアドライバは設定値を調整できるダイアログを提供する。データの読み出しは同期的・非同期的にすることができ、Imspectorは測定フローを制御し、他の装置との同期とデータ読み出しの整理、測定中の解析や可視化が可能である。
 
 .. figure:: /images/intro/docsettings.jpg
    :width: 8 cm
@@ -84,40 +64,32 @@ measurement.
 .. figure:: /images/intro/setasroi.jpg
    :align: center
 
-   All measurement parameters are remembered. So you can derive measurements from previous 
-   ones, image regions of interest etc.
+   すべてのパラメーターはmeasurementファイルに保存される。過去の測定条件や、過去のROIなどすべてを後から読み出すことができる。
 
-The program administers the settings defined by the Hardware drivers and allows the creation of template
-measurements including embedded analysis and visualization. Measurements can therefore be repeated at any time with
-identical settings by pressing a single button. Experimental data is always saved together with all relevant settings
-for later reference.
+このプログラムはハードウェアドライバに定義された設定値を管理することができるので、解析や可視化も含めた測定条件をテンプレートとしてmeasurement(.msr)ファイルに保存できる。このmeasurementはいつでも呼び出して繰り返し使うことができる。測定で取得された実験データは常に測定条件と紐付けられて保存される。
 
-All data dependencies are remembered by the program so if data changes during a measurement or manual processing all
-necessary steps to update dependent data are repeated automatically. Imspector will even remember dependencies on
-data saved on disk and can 'watch' these files and re-load them if necessary. It can therefore serve as a graphical
-front-end for your command-line numerical analysis tools. All such dependencies, as well as settings and window
-positions are conserved when saving and re-loading documents.
 
-Current state of Documentation
-------------------------------
+すべてのデータ依存性はプログラムに保存される。もし測定中にデータが変更された場合や処理操作が行われた場合、そのデータに依存するすべてのステップは再度実行されて反映される。
+さらに、データの依存性を保存されたデータからも読み出し、必要があればファイルを再読み出しする。設定やウィンドウの位置だけでなくすべての依存性が保存／読み出しできる。
 
-Many features of Imspector were inspired by its users in the |NanoBio|_ at the |MPI|.
+.. 訳不明：It can therefore serve as a graphical　front-end for your command-line numerical analysis tools.
 
-Not all of them found their way into this documentation as of now. Also, Imspector is under constant development, so
-features might be added or functionality might be replaced by superior implementations. Thus some of the information
-presented here might be outdated. Anybody is encouraged to explore the context-menus - a lot of the functionality is
-intuitive enough to figure it out by trial and error.
+このドキュメントの現在の状況
+---------------------------
 
-Imspector has been originally developed in the |NanoBio|_ at the |MPI|_ in Göttingen, Germany.
+Imspectorの多くの機能は、|MPI|の|NanoBio|_ のユーザーのアイデアによるものである。
 
-Imspector was always and is currently lacking appropriate documentation. All users of Imspector are welcome to
-contribute. The source format of this manual is `restructured text`_ and we are using Sphinx_ to create the manual
-from it. You may send manual pages or sections in any format and they will be incorporated.
+ただ、機能のすべてがこのドキュメントに含まれているわけではなく、Imspector自体が常に開発途上でもあり、新たな機能が追加されたり古い機能が置き換わったりしている。
+そのため、ドキュメント内の情報が古い場合がある。多くの機能は直感的で、その名前やツールチップから類推できるものなので、コンテキストメニューのさまざまな項目を試して欲しい。
 
-Citing Imspector
-----------------
+Imspectorは|MPI| |NanoBio|_ (ドイツ・ゲッティンゲン)で開発された。
 
-If you are using Imspector for your data acquisition or analysis and would like to cite the program or its documentation please use the following reference:
+Imspectorはドキュメンテーションが追いついていない部分が常にあり、これを手伝ってくれるユーザーを歓迎する。ドキュメントはSphinx_ を使ってビルドされており、ソースフォーマットは `restructured text`_ で書かれている。ページや段落を送付することでその内容（ページや段落）がこのドキュメントに追加される。
+
+Imspectorの引用について
+----------------------
+
+データ取得や解析にImspectorを使用して論文などで引用したい場合、次のような表記になる。
 	
 	| Schönle A., 2006. *Imspector Image Acquisition & Analysis Software*, v0.1
 	| http://www.imspector.de
