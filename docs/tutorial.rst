@@ -1,75 +1,75 @@
 .. _ShortTutorial:
 
-==============
-Short Tutorial
-==============
+=====================
+チュートリアル - 基本操作
+=====================
 
-This is a short tutorial that takes you on a tour of some of the more important features of Imspector. If this is the
-first time you use the program, it is a good idea to follow it step by step using the test data that should have
-been provided to you with the program.
+これはImspectorの基本操作のチュートリアルである。データを開き、基本的な操作方法に慣れることができる。
+撮像のチュートリアルは含まれない。（撮像に関しては _チュートリアルリスト を参照）
 
 
-Getting Started
-----------------
-
-.. _ConfigDir:
-
-Configuration Dir
------------------
-
-.. todo:: Empty
-
-Loading Data
+データを開く
 ------------
 
-.. todo:: Empty
+Imspectorを起動し、すでに撮像したファイルをウィンドウにドラッグする。あるいは、Fileメニューからファイルを開く。
 
-Displaying Data
----------------
+データの表示
+----------
 
-Magnifying Glass
-****************
+データを開くと、ウィンドウに画像あるいはスタックが表示される。ウィンドウを大きくするとそれに伴って画像も大きくなる。操作しやすい大きさに調整する。
 
-If you hold down the :kbd:`shift` key and drag with the left mouse button in a window a magnifying glass is
-displayed. :kbd:`shift + alt` keys display an even bigger magnifying glass.
 
-When you are pressing the :kbd:`shift` key AFTER starting to drag it will force a vertical or horizontal line when
-selecting a line profile.
+矩形選択
+*******
 
-Shortcuts
-*********
+画像内でマウスでドラッグすると矩形選択できる。選択部分だけを抽出したり、選択部分だけで輝度の最大・最小値をセットしたりできる。
 
-* :kbd:`F9 / F10` Fit maximum/minimum.
-  In a stack view this adjusts the colormap max/min to the maximum/minimum of the current selection, in a graph view the y-axis scale to the maximum/minimum value between the slider bars.
-* :kbd:`Page Up / Down` Go up/down one slice along the third (z-) axis.
-  Also pressing the :kbd:`shift` key moves 10, pressing :kbd:`shift + alt` moves 100 slices along the z-axis.
-* :kbd:`ctrl + Page Up / Down` Go up/down one layer along the fourth (hidden) axis.
-  Also pressing the :kbd:`shift` key moves 10, pressing :kbd:`shift + alt` moves 100 layers along the hidden axis.
+拡大鏡
+*****
 
-Graphs
-------
+ウィンドウの画像上で :kbd:`shift` キーを押しながらマウスの左ボタンを押すとカーソルの位置の画像が拡大できる。
+さらに :kbd:`shift + alt` キーを使うとより大きな倍率で画像が拡大できる。
 
-.. todo:: Empty
+なお、ドラッグを始めた後に :kbd:`shift` キーを押すと、強制的にラインプロファイルの垂直/水平方向の選択モードに入ってしまう。
 
-Drag, Drop, Cut and Paste
-----------------------------
+ショートカット
+***********
 
-Graphs, image stacks and color maps can be dragged and dropped between windows. This is done by pressing the
-:kbd:`ctrl` key while dragging with the left mouse button. Color maps can be dragged onto stacks which will then be
-displayed using the dropped colormap. For data the following rules apply
+* :kbd:`F9 / F10` カラーマップの最大値と最小値をあわせる。
+  スタックビューでは、カラーマップの最大・最小値を選択した範囲での輝度の最大・最小値に合わせる。グラフビューでは、スライダーの間の最大・最小値にY軸のスケールを合わせる。
+* :kbd:`Page Up / Down` スタックデータの場合、スライスをZ軸方向に動かす。
+  また、 :kbd:`shift` キーを押しながらだと10スライス、 :kbd:`shift + alt` キーを押しながらだと100スライス分Z軸に沿って動かせる。
+* :kbd:`ctrl + Page Up / Down` 4軸目(hidden axis)に沿ってレイヤーを動かす。
+  これもスライス同様、 :kbd:`shift` キー、 :kbd:`shift + alt` キーで大きく動かせる。
 
-* :kbd:`ctrl` Copy all slices of the current selection to the new window. If no rectangle is selected the whole stack
-  is copied.
-* :kbd:`ctrl + shift` Copy only the current slice of the current selection to the new window
-* :kbd:`ctrl + alt` Do not copy any data. Open a new view of the data in the new window
+グラフビュー
+----------
 
-In the graph window the selection is determined by the vertical bars you can drag in from the border (they turn red
-when they are in use), NOT the rectangle selection. For 4d stacks the following additional rule applies:
+画像内でLine Profileメニューを選択すると、任意の2点間の輝度のラインプロファイルがグラフとして現れる。
+形状の計測や輝度分布の表示ができる。
 
-In add-up and maximum intensity projection mode all layers (along the hidden axis) are copied. In parse-through mode only the current layer is copied.
 
-The Change Stack Size Dialog
-----------------------------
+ドラッグ＆ドロップ、カット、ペースト
+-----------------------------
+
+グラフ、イメージ、カラーマップはウィンドウ間でドラッグ＆ドロップができる。
+:kbd:`ctrl` キーを押しながらマウスの左ボタンを押してドラッグ＆ドロップするだけである。
+たとえば、カラーマップをあるウィンドウから別のウィンドウへそのまま移すことができる。
+New Window (歯車のついたウィンドウアイコン)で空のウィンドウを新規に作っておき、そこへコピーして試すと良い。
+
+* :kbd:`ctrl` ：すべてのスライス（あるいは選択した範囲）を新しいウィンドウにコピーする。
+* :kbd:`ctrl + shift` ：現在のスライス(あるいは選択した範囲）を新しいウィンドウにコピーする。
+* :kbd:`ctrl + alt` ：データをコピーしない。新しいウィンドウを作成する。
+
+グラフウィンドウでは、矩形選択ではなく垂直なスライダーバーで範囲を選択する。
+
+4次元スタックの場合は次のようなルールが適用される。
+
+* 合計(add-up)やMIP(max intensity projection)モードの場合、すべてのレイヤーがコピーされる。
+* スライス(parse-through)モードの場合、現在のレイヤーだけがコピーされる。
+
+Change Stack Size ダイアログ
+--------------------------
 
 This dialog allows you to change the physical size, offset and pixel dimensions of the stack as well as its data type.
 It can be accessed using the button at the side of the image or via the shortcut :kbd:`ctrl + t`.
@@ -95,3 +95,9 @@ Data from Imspector measurements can be exported into several file formats:
 - Becker&Hickl data files (.sdt)
 
 To export data select the data Stack and select :menuselection:`File --> Export` or use the shortcut :kbd:`ctrl + e` to open the Export Data dialog.
+
+
+チュートリアルリスト
+----------------
+* :ref:`ShortTutorial`
+* :ref:`Tutorial-STED`
