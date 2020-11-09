@@ -24,4 +24,4 @@ After this you should be able to build the documentation:
 1. now `ImspectorDocs\docs\_build\html` will contain the built docs
 
 The documentation is built after each push. Read the latest version at 
-[ReadTheDocs.org](https://imspectordocs.readthedocs.io/).
+[ReadTheDocs.org](https://imspectordocs-ja.readthedocs.io/ja/latest/).
