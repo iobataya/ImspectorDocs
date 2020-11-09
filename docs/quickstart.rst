@@ -83,6 +83,7 @@ Measurementウィンドウは測定の条件を設定するウィンドウであ
 'Sync first axis'は、ハードウェアで制御される最初の軸の設定である。
 コンピューターは、このデバイスからピクセル同期信号(pixel sync)が得られると想定する（得られるかどうかのチェックはできない）。
 このデバイスは必ず同期信号を発生させるように設定されなければならない。
+
 .. (and will tell the framework that it does)
    [e.g. when you enable 'Create sync pulses' in the NiDAQ card]
 
