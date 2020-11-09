@@ -15,6 +15,7 @@ Contents:
    
    quickstart
    tutorial
+   tutorial-STED
    
    installation
    ui
