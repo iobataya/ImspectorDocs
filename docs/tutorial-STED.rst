@@ -1,4 +1,4 @@
-.. Tutorial-STED
+.. _Tutorial-STED:
 
 ============================
 チュートリアル - Confocal/STED
