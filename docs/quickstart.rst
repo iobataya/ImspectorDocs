@@ -21,122 +21,96 @@ Imspectorはデータ解析のためのプラグインやハードウェア用�
    バージョンは対応する組み合わせである必要がある。常に新しいバージョンのImspectorを使用する必要がある。
    ハードウェアドライバーも最新のものにアップデートする必要がある。
 
-Installation
--------------
+インストール
+----------
 
-For simply running Imspector (e.g. for data analysis) all you have to do is to extract the zip Archive into a
-directory on your computer. Imspector will start and ask you for configuration directory. If this is the first time
-you use Imspector, create one and select it. Otherwise point Imspector to your
-existing directory.
+単純にImpsectorをデータ解析につかうだけであれば、インストーラのzipアーカイブを入手して解凍して起動する。インストーラは設定フォルダの場所を聞いてくる。もしImspectorを初めて使うのであればフォルダを作成して選択する。もしすでに設定フォルダがあれば、それを指定する。
 
 .. note::
-   Depending on your OS configuration you may have to install some additional libraries.
-   Please see the `program start chapter in the FAQ <https://imspector.mpibpc.mpg.de/documentation/faq.html#errors-during-startup>`_ if you encounter errors during startup.
+   OSの設定によってはいくつかのライブラリをインストールする必要があるかもしれない。
+   エラーが発生する場合にはAbberiorInstrumentsに問い合わせる。
 
-The configuration directory can be chosen independently for each user on each computer Imspector is run.
-The directory itself can contain computer-specific configurations and also contains custom color maps,
-fit functions, formulas created by the user. Therefore it is reasonable to use one directory per user
-which is accessible from (or synchronized between) computers. You can change its location at any time
-by copying/moving it and directing Imspector to the new location through
-:menuselection:`&Edit --> &Preferences --> &Configuration Directory`.
+設定フォルダはImspectorが動作するPCそれぞれ、さらにユーザーそれぞれに独立して選択することもできる。
+フォルダ自体はPC特異的な設定だけでなく、ユーザーが作ったカスタムカラーマップ、フィッティングに使う関数、数式も格納する。
+そのため、共有PCで使う場合には、ユーザーごとに設定フォルダを作成すると良い。
+設定フォルダを変更するには、:menuselection:`&Edit --> &Preferences --> &Configuration Directory`を使う。
 
-There are other useful options in this menu, too. 
-To avoid an error message upon startup, explicitly disable logging for now.
+このメニューは他にも便利なオプションがある。（起動時のエラーメッセージ回避や、明示的なログの停止など）
 
 .. warning:: 
-   You should regularly back up your configuration directory as settings, custom colormaps etc.
-   can take some effort to re-create if you loose them. Also a regular backup allows you to reconstruct
-   a working configuration if, for some reason your hardware does not behave as expected any
-   more and you are unsure what you changed.
+   設定フォルダーは、定期的にバックアップしておくと良い。
+   失ってしまうとせっかく作ったカスタムカラーマップをまた最初から作り直すことになる。
+   また、設定フォルダーには装置の光学素子やデバイスのパラメーターが保存されている。
+   装置の構成や光学系の調整をする前にバックアップしておけば、問題が起きた場合にも前の状態に戻せて便利である。
 
-  
-Adding devices
----------------
+デバイスの追加
+------------
 
-Go to :menuselection:`&Hardware --> &Add/Remove Devices` to add devices and then
-click on the add button of the list box. You get a dialog with a combo 
-list. Choose the device type. you will be asked a name. 
-Choose one that is recognized by you and other potential users and keep in 
-mind you may want to add more than one 'Camera' or 'Scanner'. 
- 
-.. note:: 
-   Imspector can be extended by custom drivers compiled against the SDK.
-   This requires knowledge of C++, the MFC and an installation of the 
-   Visual Studio 2008 (currently) 
-
-Adjust the hardware settings
-----------------------------
-
-Hardware settings are set in :menuselection:`&Hardware --> &Configure`. Usually you
-will have to enter an identifier for the device. After adjusting the settings
-press initialize to see whether the device was found and can be 
-configured using your chosen settings. 
+メニューの :menuselection:`&Hardware --> &Add/Remove Devices` で
+リストボックスの追加ボタンをクリックするとデバイスを追加できる。
+リストをもつダイアログが現れるので、デバイスのタイプ、名前を指定する。
+デバイスは複数追加できる。
 
 .. note:: 
-   The device id for the NI card is a string, e.g. "Dev1" and can be found in the
-   measurement & automation explorer. For NIDAQ cards you should restart Imspector
-   right after initializing it for the first time and saving the hardware settings
-   because the the number of available channels (and thus the configuration of 
-   the settings dialogs) depends on the device model.  
-   The µm -> Volts mapping is done in the Hardware settings of the NiCard
-   after the restart (extra page with a channel selector and the possibility
-   to set min and max Volts and the corresponding area your scanner will do).
- 
-Configuring a measurement
+   Imspectorは、そのSDKに対してコンパイルされた独自のドライバーで拡張できる。
+   これにはC++ や MFC の知識が必要で、VisualStudio2008を所有している必要がある。
+
+ハードウェア設定の調整
+------------------
+
+ハードウェア設定は、 :menuselection:`&Hardware --> &Configure` で可能である。
+通常はデバイスのIDを入力する必要があるが、調整しておけばinitializeリンクを押すだけで
+デバイスが見つかったかどうかを確認し、設定フォルダに保存された設定が適用される。
+
+.. note:: 
+   NIのカードのデバイスIDは、"Dev1"といった文字列で、measurement & automation explorerで見つけることができる。
+   NIDAQカードでは、最初にハードウェア設定を初期化・保存した後、Imspectorの再起動が必要になる。
+   これは装置のモデルによって使用可能なチャンネルの下図などが変わるからである。
+   数値の単位、たとえば µm から V　へのマッピングは、再起動後、このNIcardのハードウェア設定内でできる。
+   (チャンネル選択、電圧の最小値・最大値の設定、対応するスキャナのエリアなど）
+
+測定の設定
+--------
+
+Measurementドキュメントを開き、:menuselection:`&Measurement --> Edit Settings`を選択する。
+このウィンドウによって測定条件のパラメータを設定できる。多くの複数のmeasurements(データ)を同時に開ける。
+データ(measurement)にはそれぞれの測定条件が紐付けられており、測定条件を即座に切り替えることができる。
+
+ほとんどのプロパティウィンドウは、ハードウェア設定で設定した個々のデバイスに対応付けられているが、
+Measurementウィンドウは測定の条件を設定するウィンドウである。
+すなわち、どの軸でスキャンするか、どうやってトリガーシグナルで自動制御するか、といった設定を選択できる。
+
+'Sync first axis'は、ハードウェアで制御される最初の軸の設定である。
+コンピューターは、このデバイスからピクセル同期信号(pixel sync)が得られると想定する（得られるかどうかのチェックはできない）。
+このデバイスは必ず同期信号を発生させるように設定されなければならない。
+.. (and will tell the framework that it does)
+   [e.g. when you enable 'Create sync pulses' in the NiDAQ card]
+
+もう一つのデバイスは、最初の軸の1ラインが終わるまで待たなければならない。
+今の所これはいつも同じデバイスで行われ、同期信号も同じデバイスで発生される。
+
+その他のデバイスに関しても、各軸の同期タイミングをどう扱うか、同期信号を監視するかを
+プログラムに知らせておかなければならない。
+
+NiDAQmxカード1枚だけでの測定
 -------------------------
 
-Open a document and go to :menuselection:`&Measurement --> Edit Settings`. This
-lets you configure parameters that define your measurement. You can have many measurements
-(i.e. documents) open at the same time and start them in turn to switch between different
-settings. 
+NIカードには適切な'sync out'を選択してsync inを無効にし、dwell timeをDACs設定で設定しておく。
+また、DACs設定では'Create Sync pulses'オプションを選択しておく。
 
-Most property pages are specific to the devices you configured in the hardware settings,
-only the first page configures the measurement itself, i.e. selects which axes will be 
-scanned and whether this is controlled automatically by trigger signals or through
-Imspector. 
+その他の設定、たとえば使用するアナログ入力やカウンターチャンネルなどを好きなように設定して良い。
 
-'Sync first axis' in the first page means that the first axis is controlled 
-by hardware. The computer assumes that a pixel sync is shared by the 
-devices (but has no way of checking it).
-The devices have to be configures such that exactly one will be responsible
-for creating the sync pulses (and will tell the framework that it does)
-[e.g. when you enable 'Create sync pulses' in the NiDAQ card]
+もし、NiDAQカードだけを使うときは少なくとも1つのアナログ入力かCNTR入力は選択しておく。
+測定を開始するときに、ダイアログが現れる。
 
-Exactly one device is responsible for 'waiting' until the axis sync has
-finished during each measurement stack. Currently this is always the same
-device that also creates the sync pulses.
-
-All other devices have to acknowledge that they can deal with the synced
-axis and must be configured to listen to the sync pulses (and tell the 
-framework about it).
-
-Measuring with just one NiDAQmx card
-------------------------------------
-
-Choose an appropriate 'sync out' for the NI card and 'disabled'
-for sync in and set the dwell time in the 'DACs' configuration 
-page.  Also set the 'Create Sync pulses' option in the DACs configuration
-
-Select all other settings to your liking. (e.g. whether you want to 
-measure histograms or not in the SPCM, AI channels in the NI card, have
-one or two counter inputs etc. Please roam the config dialogs and tell
-me what does and what doesn't make sense to you).
-
-Select at least one analog input or a CNTR input if only using the NiDAQ 
-card. When starting the measurement, a stack should then pop up.
- 
-If you need to configure the TTL outputs of the NiDAQ card, please check back
-with us.
+もしNiDAQカードのTTL出力の設定が必要な場合には、AbberiorInstrumentsに問い合わせる。
 
 
-Analyzing data
+
+データの解析
 ---------------
 
-All analysis functions are accessible through context menus. Right click 
-on a stack, graph, axis, color map for those. For most of the frequently
-used functions there are toolbar buttons.
- 
-Please write an email with as much detail of what you intended to do and what
-you already tried if there is trouble.
- 
- 
+すべての解析機能はコンテキストメニューから選択できる。
+画像、グラフ、軸、カラーマップなどの上で右クリックを押すと、その部分に対応するコンテキストメニューが現れる。
+もっともよく使われる機能は、ツールバーボタンとして表示されている。
+
