@@ -1,9 +1,9 @@
 .. _Importing Data into Imspector:
 
-Imspectorは複数のファイルフォーマットの読み込みが可能である。
+Imspectorは種々のファイルフォーマットの読み込みが可能である。
   
 
-.. figure:: /images/ui/change_stack_size_dialog.png
+.. figure:: /images/data/Import_menu_file_format.png
    :width: 10 cm
    :align: center
 
